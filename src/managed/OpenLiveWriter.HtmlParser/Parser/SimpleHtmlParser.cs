@@ -421,7 +421,7 @@ namespace OpenLiveWriter.HtmlParser.Parser
             IElementSource source = (stopAt == endScript) ? (IElementSource)new JavascriptParser(data, offset, end - offset) : (IElementSource)new CssParser(data, offset, end - offset);
             Stack stack = new Stack();
             Element element;
-            int last = pos;
+
             while (null != (element = source.Next()))
             {
                 stack.Push(element);

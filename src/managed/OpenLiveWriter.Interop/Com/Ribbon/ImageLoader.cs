@@ -35,7 +35,9 @@ namespace OpenLiveWriter.Interop.Com.Ribbon
             if (offset < 30) throw new FormatException("Bad BMP format: missing one or more required header fields.");
 
             // Read BitmapInfoHeader fields.
+#pragma warning disable 0219
             uint biSize = reader.ReadUInt32();
+#pragma warning restore 0219
             uint biWidth = reader.ReadUInt32();
             uint biHeight = reader.ReadUInt32();
             ushort biPlanes = reader.ReadUInt16();
