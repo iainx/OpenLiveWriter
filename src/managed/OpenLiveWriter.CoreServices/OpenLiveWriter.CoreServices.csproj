@@ -349,7 +349,7 @@
     <MasterXmlPath>$(MSBuildProjectDirectory)\..\..\..\intl\markets\Master.xml</MasterXmlPath>
     <MasterXmlOutput>$(MSBuildProjectDirectory)\Marketization\Master.xml</MasterXmlOutput>
   </PropertyGroup>
-  <Target Name="GenerateMarketXml" DependsOnTargets="ResolveProjectReferences" BeforeTargets="CoreCompile">
+  <Target Name="GenerateMarketXml" DependsOnTargets="ResolveProjectReferences" BeforeTargets="CoreCompile;AssignLinkMetadata">
     <MakeDir Directories="$(MSBuildProjectDirectory)\Marketization" />
     <Copy SourceFiles="$(MasterXmlPath)" DestinationFiles="$(MasterXmlOutput)" />
     <Exec Command="&quot;$(OutDir)MarketXmlGenerator.exe&quot; &quot;$(MSBuildProjectDirectory)\..\..\..\intl\markets&quot; &quot;$(MSBuildProjectDirectory)\Marketization\Markets.xml&quot;" />
