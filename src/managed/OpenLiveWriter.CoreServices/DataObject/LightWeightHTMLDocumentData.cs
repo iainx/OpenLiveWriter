@@ -14,9 +14,7 @@ namespace OpenLiveWriter.CoreServices
 
         public static LightWeightHTMLDocumentData Create(IDataObject iDataObject)
         {
-#pragma warning disable 0219
             string[] loser = iDataObject.GetFormats();
-#pragma warning restore 0219
 
 
             if (OleDataObjectHelper.GetDataPresentSafe(iDataObject, LightWeightHTMLDataObject.LIGHTWEIGHTHTMLDOCUMENTFORMAT))

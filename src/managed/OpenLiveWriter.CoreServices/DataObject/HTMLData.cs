@@ -31,9 +31,7 @@ namespace OpenLiveWriter.CoreServices
         /// <returns>The HTMLData, null if it couldn't be created.</returns>
         public static HTMLData Create(IDataObject iDataObject)
         {
-#pragma warning disable 0219
             string[] loser = iDataObject.GetFormats();
-#pragma warning restore 0219
 
             if (OleDataObjectHelper.GetDataPresentSafe(iDataObject, DataFormats.Html))
             {
