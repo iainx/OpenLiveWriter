@@ -352,7 +352,8 @@
   <Target Name="GenerateMarketXml" DependsOnTargets="ResolveProjectReferences" BeforeTargets="CoreCompile;AssignLinkMetadata">
     <MakeDir Directories="$(MSBuildProjectDirectory)\Marketization" />
     <Copy SourceFiles="$(MasterXmlPath)" DestinationFiles="$(MasterXmlOutput)" />
-    <Exec Command="&quot;$(OutDir)MarketXmlGenerator.exe&quot; &quot;$(MSBuildProjectDirectory)\..\..\..\intl\markets&quot; &quot;$(MSBuildProjectDirectory)\Marketization\Markets.xml&quot;" />
+    <Exec Command="&quot;$(OutDir)MarketXmlGenerator.exe&quot; &quot;$(MSBuildProjectDirectory)\..\..\..\intl\markets&quot; &quot;$(MSBuildProjectDirectory)\Marketization\Markets.xml&quot;" Condition=" '$(OS)' == 'Windows_NT' "/>
+    <Exec Command="mono &quot;$(OutDir)MarketXmlGenerator.exe&quot; &quot;$(MSBuildProjectDirectory)\..\..\..\intl\markets&quot; &quot;$(MSBuildProjectDirectory)\Marketization\Markets.xml&quot;" Condition=" '$(OS)' == 'Unix' "/>
   </Target>
   <Target Name="_CopyFilesMarkedCopyLocal" />
 </Project>
