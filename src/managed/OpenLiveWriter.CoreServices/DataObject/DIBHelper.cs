@@ -24,7 +24,10 @@ namespace OpenLiveWriter.CoreServices
             byte[] bytes = new byte[stream.Length];
             stream.Read(bytes, 0, (int)stream.Length);
 
+#pragma warning disable 0219
             string imagePath = string.Empty;
+#pragma warning restore 0219
+
             GCHandle gcHandle = new GCHandle();
             try
             {

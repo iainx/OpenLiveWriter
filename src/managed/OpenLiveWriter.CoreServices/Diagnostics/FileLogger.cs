@@ -175,7 +175,10 @@ namespace OpenLiveWriter.CoreServices.Diagnostics
                 }
                 catch (Exception e)
                 {
+#pragma warning disable 0219
                     object foo = e;
+#pragma warning restore 0219
+
                     // This should never happen, but if it does, we can't very well log about it.
 #if DEBUG
                     if (!loggingFailed)
