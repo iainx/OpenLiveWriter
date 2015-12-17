@@ -82,7 +82,9 @@ namespace BlogRunnerReporter
                             msg.Subject = "Blog provider " + notificationType + " detected";
                             msg.Body = notificationType + " detected while running blog provider tests. Please see attached.";
 
+#pragma warning disable 0618
                             SmtpClient client = new SmtpClient();
+#pragma warning restore 0618
                             client.DeliveryMethod = SmtpDeliveryMethod.PickupDirectoryFromIis;
                             client.Send(msg);
                         }
