@@ -138,10 +138,22 @@
         <Optimize>false</Optimize>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)' == 'DebugMac'">
+	<DebugType>full</DebugType>
+	<DebugSymbols>true</DebugSymbols>
+	<DefineConstants>$(DefineConstants);DEBUG;TRACE;MAC</DefineConstants>
+	<Optimize>false</Optimize>
+    </PropertyGroup>
+
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
         <DebugType>pdbonly</DebugType>
         <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
         <Optimize>true</Optimize>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)' == 'ReleaseMac'">
+	<DebugType>pdbonly</DebugType>
+	<DefineConstants>$(DefineConstants);TRACE;MAC</DefineConstants>
+	<Optimize>true</Optimize>
+    </PropertyGroup>
 </Project>
