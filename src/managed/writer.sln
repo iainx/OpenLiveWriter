@@ -277,12 +277,8 @@ Global
                 {4C45353C-8B67-4E88-BCCC-94FECE0FEA46}.ReleaseMac|Any CPU.Build.0 = ReleaseMac|Any CPU
 		{195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.Debug|Any CPU.Build.0 = Debug|Win32
-                {195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.DebugMac|Any CPU.ActiveCfg = DebugMac|Win32
-                {195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.DebugMac|Any CPU.Build.0 = DebugMac|Win32
 		{195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.Release|Any CPU.ActiveCfg = Release|Win32
 		{195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.Release|Any CPU.Build.0 = Release|Win32
-                {195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.ReleaseMac|Any CPU.ActiveCfg = ReleaseMac|Win32
-                {195A60BF-7A4D-42E6-B5F4-FEBC679E19F0}.ReleaseMac|Any CPU.Build.0 = ReleaseMac|Win32
 		{D286C651-2AE7-447E-BBD8-B82F1C542667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D286C651-2AE7-447E-BBD8-B82F1C542667}.Debug|Any CPU.Build.0 = Debug|Any CPU
                 {D286C651-2AE7-447E-BBD8-B82F1C542667}.DebugMac|Any CPU.ActiveCfg = DebugMac|Any CPU
