@@ -18,6 +18,7 @@ namespace OpenLiveWriter.CoreServices
         public static IWin32Window ForegroundWin32Window
         {
             get { return new Win32WindowImpl(User32.GetForegroundWindow()); }
+            //get { return null; }
         }
 
         /// <summary>

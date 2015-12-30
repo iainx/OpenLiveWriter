@@ -66,6 +66,7 @@ namespace OpenLiveWriter.CoreServices.Diagnostics
             using (Process p = Process.GetCurrentProcess())
                 pid = p.Id;
 
+#if WINDOWS
             uint sid;
             // ProcessIdToSessionId returns false if session id couldn't be determined
             if (!Kernel32.ProcessIdToSessionId((uint)pid, out sid))
@@ -74,6 +75,9 @@ namespace OpenLiveWriter.CoreServices.Diagnostics
                 processId = pid.ToString(CultureInfo.InvariantCulture);
             else
                 processId = sid + "." + pid;
+#else
+            processId = pid.ToString (CultureInfo.InvariantCulture);
+#endif
         }
 
         /// <summary>

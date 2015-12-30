@@ -56,6 +56,7 @@ namespace OpenLiveWriter.CoreServices
         {
             get
             {
+#if WINDOWS
                 if (_pixelsPerLogicalInchX == null)
                 {
                     IntPtr hWndDesktop = User32.GetDesktopWindow();
@@ -63,6 +64,9 @@ namespace OpenLiveWriter.CoreServices
                     _pixelsPerLogicalInchX = Gdi32.GetDeviceCaps(hDCDesktop, DEVICECAPS.LOGPIXELSX);
                     User32.ReleaseDC(hWndDesktop, hDCDesktop);
                 }
+#else
+                _pixelsPerLogicalInchX = 110;
+#endif
                 return _pixelsPerLogicalInchX.Value;
             }
         }
@@ -72,6 +76,7 @@ namespace OpenLiveWriter.CoreServices
         {
             get
             {
+#if WINDOWS
                 if (_pixelsPerLogicalInchY == null)
                 {
                     IntPtr hWndDesktop = User32.GetDesktopWindow();
@@ -79,6 +84,9 @@ namespace OpenLiveWriter.CoreServices
                     _pixelsPerLogicalInchY = Gdi32.GetDeviceCaps(hDCDesktop, DEVICECAPS.LOGPIXELSY);
                     User32.ReleaseDC(hWndDesktop, hDCDesktop);
                 }
+#else
+                _pixelsPerLogicalInchY = 110;
+#endif
                 return _pixelsPerLogicalInchY.Value;
             }
         }

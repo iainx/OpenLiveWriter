@@ -19,6 +19,7 @@ namespace OpenLiveWriter.CoreServices
     {
         public static string GetCurrentProcessName()
         {
+#if WINDOWS
             // allocate buffer for getting process name
             uint bufferSize = Kernel32.MAX_PATH * 4;
             StringBuilder buffer = new StringBuilder((int)bufferSize);
@@ -33,6 +34,9 @@ namespace OpenLiveWriter.CoreServices
 
             // get the base name of the process and see if it matches IE
             return Path.GetFileName(buffer.ToString());
+#else
+            return "OpenLiveWriter";
+#endif
         }
 
         public static string GetProcessName(int processId)

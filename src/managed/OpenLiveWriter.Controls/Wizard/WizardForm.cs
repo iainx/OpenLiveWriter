@@ -36,8 +36,9 @@ namespace OpenLiveWriter.Controls.Wizard
         private Panel panelHeader;
         protected Panel panelFooter;
         private WizardController _controller;
+#if WINDOWS
         private IntPtr _hSystemMenu;
-
+#endif
         public WizardForm(WizardController controller)
         {
             _controller = controller;
@@ -80,9 +81,11 @@ namespace OpenLiveWriter.Controls.Wizard
                 // cancel button
                 buttonCancel.Enabled = value;
 
+#if WINDOWS
                 // close menu
                 User32.EnableMenuItem(_hSystemMenu, SC.CLOSE.ToUInt32(),
                     MF.BYCOMMAND | (value ? MF.ENABLED : MF.DISABLED));
+#endif
             }
         }
 
@@ -98,11 +101,11 @@ namespace OpenLiveWriter.Controls.Wizard
             Form owner = this.Owner;
             if (owner != null)
                 this.TopMost = owner.TopMost;
-
+#if WINDOWS
             // save a reference to the system menu
             _hSystemMenu = User32.GetSystemMenu(Handle, false);
             Trace.Assert(_hSystemMenu != IntPtr.Zero);
-
+#endif
             base.OnLoad(e); // This needs to be called before _controller.OnWizardLoad so that scaling happens before the panel is added. (bugs 599809, 606698)
 
             _controller.OnWizardLoad();

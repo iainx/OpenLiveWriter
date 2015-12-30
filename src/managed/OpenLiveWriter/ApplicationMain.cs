@@ -32,6 +32,7 @@ namespace OpenLiveWriter
         [STAThread]
         public static void Main(string[] args)
         {
+            #if WINDOWS
             // WinLive 281407: Remove the current working directory from the dll search path
             // This prevents a rogue dll (wlidcli.dll) from being loaded while doing
             // something like opening a .wpost from a network location.
@@ -48,7 +49,7 @@ namespace OpenLiveWriter
                 DisplayMessage.Show(MessageId.GuestNotSupported);
                 return;
             }
-
+#endif
             // add Plugins directory to probing path
             AppDomain currentDomain = AppDomain.CurrentDomain;
 
@@ -77,12 +78,15 @@ namespace OpenLiveWriter
 
             //initialize the default internet features for browser controls
             InitInternetFeatures();
-
+#if WINDOWS
             SingleInstanceApplicationManager.Run(
                 appId,
                 LaunchAction,
                 args
                 );
+#else
+            LaunchAction (args, true);
+#endif
         }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace OpenLiveWriter
         /// </summary>
         public static void InitInternetFeatures()
         {
+            #if WINDOWS
             //Turn on Local Machine Lockdown mode.  This ensures HTML accidentally executed in the
             //Local Machine security zone does not get privileges elevated
             UrlMon.CoInternetSetFeatureEnabled(FEATURE.LOCALMACHINE_LOCKDOWN, INTERNETSETFEATURE.ON_PROCESS, true);
@@ -107,6 +112,7 @@ namespace OpenLiveWriter
 
             //Turn off the annoying click sound that occurs if a browser navigation occurs in an embedded control
             UrlMon.CoInternetSetFeatureEnabled(FEATURE.DISABLE_NAVIGATION_SOUNDS, INTERNETSETFEATURE.ON_PROCESS, true);
+            #endif
         }
 
         private static void LoadCulture(string cultureName)
@@ -161,11 +167,12 @@ namespace OpenLiveWriter
                         // show splash screen
                         IDisposable splashScreen = null;
                         //	Show the splash screen.
+#if WINDOWS
                         SplashScreen splashScreenForm = new SplashScreen();
                         splashScreenForm.Show();
                         splashScreenForm.Update();
                         splashScreen = new FormSplashScreen(splashScreenForm);
-
+#endif
                         LaunchFirstInstance(splashScreen, args);
                     }
                     finally

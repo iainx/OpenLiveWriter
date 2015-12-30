@@ -91,7 +91,9 @@ namespace OpenLiveWriter.PostEditor.JumpList
         /// <param name="appId">The application id.</param>
         private void SetCurrentProcessAppId(string appId)
         {
+#if WINDOWS
             Shell32.SetCurrentProcessExplicitAppUserModelID(appId);
+#endif
         }
 
         /// <summary>
