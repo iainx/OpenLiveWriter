@@ -55,6 +55,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenLiveWriter.Ribbon", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketXmlGenerator", "MarketXmlGenerator\MarketXmlGenerator.csproj", "{D286C651-2AE7-447E-BBD8-B82F1C542667}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLiveWriter.MacPlatform", "OpenLiveWriter.MacPlatform\OpenLiveWriter.MacPlatform.csproj", "{6FE8A82C-7CCC-441D-8135-FF5FFBFB354D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C45353C-8B67-4E88-BCCC-94FECE0FEA46} = {4C45353C-8B67-4E88-BCCC-94FECE0FEA46}
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B7A217A-FC20-4B0B-9C07-97209453DDB1}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\build.cmd = ..\..\build.cmd
@@ -295,6 +300,10 @@ Global
 		{4E445FF3-7F7B-46D1-9424-682E146F1F09}.Release|Any CPU.Build.0 = Release|Any CPU
                 {4E445FF3-7F7B-46D1-9424-682E146F1F09}.ReleaseMac|Any CPU.ActiveCfg = ReleaseMac|Any CPU
                 {4E445FF3-7F7B-46D1-9424-682E146F1F09}.ReleaseMac|Any CPU.Build.0 = ReleaseMac|Any CPU
+                {6FE8A82C-7CCC-441D-8135-FF5FFBFB354D}.DebugMac|Any CPU.ActiveCfg = DebugMac|Any CPU
+                {6FE8A82C-7CCC-441D-8135-FF5FFBFB354D}.DebugMac|Any CPU.Build.0 = DebugMac|Any CPU
+                {6FE8A82C-7CCC-441D-8135-FF5FFBFB354D}.ReleaseMac|Any CPU.ActiveCfg = DebugMac|Any CPU
+                {6FE8A82C-7CCC-441D-8135-FF5FFBFB354D}.ReleaseMac|Any CPU.Build.0 = DebugMac|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
