@@ -7,9 +7,27 @@
     <RootNamespace>OpenLiveWriter.PostEditor</RootNamespace>
     <ProjectGuid>{D6C9A393-E0B8-4548-B84B-F8B6FE2A5645}</ProjectGuid>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.PostEditor</IntermediateOutputPath>
+    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.PostEditor</IntermediateOutputPath>
+    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.PostEditor</IntermediateOutputPath>
+    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.PostEditor</IntermediateOutputPath>
+    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+<!--
     <Reference Include="DeltaCompressionDotNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
       <HintPath>..\packages\DeltaCompressionDotNet.1.0.0\lib\net45\DeltaCompressionDotNet.dll</HintPath>
       <Private>True</Private>
@@ -54,6 +72,7 @@
       <HintPath>..\packages\squirrel.windows.1.2.1\lib\Net45\Squirrel.dll</HintPath>
       <Private>True</Private>
     </Reference>
+-->
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -69,77 +88,62 @@
     <ProjectReference Include="..\OpenLiveWriter.Api\OpenLiveWriter.Api.csproj">
       <Name>OpenLiveWriter.Api</Name>
       <Project>{B6D10B42-F173-4086-BB81-96B724BA5594}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.ApplicationFramework\OpenLiveWriter.ApplicationFramework.csproj">
       <Name>OpenLiveWriter.ApplicationFramework</Name>
       <Project>{EEEE653A-90CE-44E2-B40E-22F747880CC0}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.BlogClient\OpenLiveWriter.BlogClient.csproj">
       <Name>OpenLiveWriter.BlogClient</Name>
       <Project>{FE2EA529-26E6-42C3-9F6A-E58966995FFE}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.BrowserControl\OpenLiveWriter.BrowserControl.csproj">
       <Name>OpenLiveWriter.BrowserControl</Name>
       <Project>{A5C213F6-F0C6-4FD6-B496-61FE434621A6}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Controls\OpenLiveWriter.Controls.csproj">
       <Name>OpenLiveWriter.Controls</Name>
       <Project>{D4A39612-3610-458F-83F8-5722D1F51063}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.CoreServices\OpenLiveWriter.CoreServices.csproj">
       <Name>OpenLiveWriter.CoreServices</Name>
       <Project>{9154B6B4-F2C3-4FB4-BE38-A26A6C9409EE}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Extensibility\OpenLiveWriter.Extensibility.csproj">
       <Name>OpenLiveWriter.Extensibility</Name>
       <Project>{A803C16E-6619-4017-883C-EA73EB947F34}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.FileDestinations\OpenLiveWriter.FileDestinations.csproj">
       <Name>OpenLiveWriter.FileDestinations</Name>
       <Project>{217B1333-654D-4901-807D-6E1A98FF3A4D}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.HtmlEditor\OpenLiveWriter.HtmlEditor.csproj">
       <Name>OpenLiveWriter.HtmlEditor</Name>
       <Project>{6A6872BC-67EF-4A42-A21A-30ECED376923}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.HtmlParser\OpenLiveWriter.HtmlParser.csproj">
       <Name>OpenLiveWriter.HtmlParser</Name>
       <Project>{8B905D4B-EE76-4EEE-83CC-C9028B2F16AE}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Interop.Mshtml\OpenLiveWriter.Interop.Mshtml.csproj">
       <Name>OpenLiveWriter.Interop.Mshtml</Name>
       <Project>{102B4586-3CDB-4DC2-A918-8377B6915BB4}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Interop\OpenLiveWriter.Interop.csproj">
       <Name>OpenLiveWriter.Interop</Name>
       <Project>{0937EF37-EB01-48E2-885B-991044877712}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Localization\OpenLiveWriter.Localization.csproj">
       <Name>OpenLiveWriter.Localization</Name>
       <Project>{DF928A2F-38E3-4B1F-83CE-1FDFDE836D84}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Mshtml\OpenLiveWriter.Mshtml.csproj">
       <Name>OpenLiveWriter.Mshtml</Name>
       <Project>{906BA039-467B-41AE-B805-BA1B837AB763}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.InternalWriterPlugin\OpenLiveWriter.InternalWriterPlugin.csproj">
-      <Name>OpenLiveWriter.WriterPlugin</Name>
+      <Name>OpenLiveWriter.InternalWriterPlugin</Name>
       <Project>{699FB638-CE02-48D7-8078-30A7939C5BCB}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

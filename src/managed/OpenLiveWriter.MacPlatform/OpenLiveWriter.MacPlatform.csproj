@@ -8,9 +8,24 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <OutputType>Library</OutputType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <UseXamMacFullFramework>true</UseXamMacFullFramework>
+    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.MacPlatform</IntermediateOutputPath>
+    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.MacPlatform</IntermediateOutputPath>
+    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.MacPlatform</IntermediateOutputPath>
+    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.MacPlatform</IntermediateOutputPath>
+    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -19,11 +34,18 @@
     <ProjectReference Include="..\OpenLiveWriter\OpenLiveWriter.csproj">
       <Name>OpenLiveWriter</Name>
       <Project>{4C45353C-8B67-4E88-BCCC-94FECE0FEA46}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenLiveWriter.CoreServices\OpenLiveWriter.CoreServices.csproj">
+      <Project>{9154B6B4-F2C3-4FB4-BE38-A26A6C9409EE}</Project>
+      <Name>OpenLiveWriter.CoreServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MacPlatform.cs" />
+    <Compile Include="AppDelegate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="$(RepoRoot)\writer.build.targets" />
