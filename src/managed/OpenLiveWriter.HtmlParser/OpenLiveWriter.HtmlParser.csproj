@@ -5,6 +5,23 @@
     <AssemblyName>OpenLiveWriter.HtmlParser</AssemblyName>
     <RootNamespace>OpenLiveWriter.HtmlParser</RootNamespace>
     <ProjectGuid>{8B905D4B-EE76-4EEE-83CC-C9028B2F16AE}</ProjectGuid>
+    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.HtmlParser</IntermediateOutputPath>
+    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.HtmlParser</IntermediateOutputPath>
+    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.HtmlParser</IntermediateOutputPath>
+    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.HtmlParser</IntermediateOutputPath>
+    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

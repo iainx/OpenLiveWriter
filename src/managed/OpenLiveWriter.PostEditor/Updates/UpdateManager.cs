@@ -3,7 +3,9 @@
 
 using OpenLiveWriter.CoreServices;
 using OpenLiveWriter.CoreServices.ResourceDownloading;
+#if WINDOWS
 using Squirrel;
+#endif
 using System;
 using System.Collections;
 using System.Diagnostics;
@@ -20,6 +22,7 @@ namespace OpenLiveWriter.PostEditor.Updates
 
         public static void CheckforUpdates(bool forceCheck = false)
         {
+#if WINDOWS
             var checkNow = forceCheck || UpdateSettings.AutoUpdate;
             var downloadUrl = UpdateSettings.CheckForBetaUpdates ?
                 UpdateSettings.BetaUpdateDownloadUrl : UpdateSettings.UpdateDownloadUrl;
@@ -27,8 +30,12 @@ namespace OpenLiveWriter.PostEditor.Updates
             // Schedule Open Live Writer 10 seconds after the launch
             var delayUpdate = new DelayUpdateHelper(UpdateOpenLiveWriter(downloadUrl, checkNow), UPDATELAUNCHDELAY);
             delayUpdate.StartBackgroundUpdate("Background OpenLiveWriter application update");
+#else
+            Trace.WriteLine("Update disabled when not running on Windows");
+#endif
         }
 
+#if WINDOWS
         private static ThreadStart UpdateOpenLiveWriter(string downloadUrl, bool checkNow)
         {
             return async () =>
@@ -51,5 +58,6 @@ namespace OpenLiveWriter.PostEditor.Updates
         }
 
         private const int UPDATELAUNCHDELAY = 10000;
+#endif
     }
 }

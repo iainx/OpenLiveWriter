@@ -103,7 +103,8 @@ namespace OpenLiveWriter.Localization
                 return defaultSize;
         }
 
-        public static bool DebugMode = false;
+        static bool debugMode = false;
+        public static bool DebugMode { get; set; }
 
         public static Font ItalicFont
         {

@@ -13,8 +13,26 @@
     <StartupObject>OpenLiveWriter.ApplicationMain</StartupObject>
     <ApplicationManifest>OpenLiveWriter.exe.manifest</ApplicationManifest>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter</IntermediateOutputPath>
+    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter</IntermediateOutputPath>
+    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter</IntermediateOutputPath>
+    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter</IntermediateOutputPath>
+    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+<!--
     <Reference Include="DeltaCompressionDotNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
       <HintPath>..\packages\DeltaCompressionDotNet.1.0.0\lib\net45\DeltaCompressionDotNet.dll</HintPath>
       <Private>True</Private>
@@ -52,13 +70,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Splat, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Splat.1.6.2\lib\Net45\Splat.dll</HintPath>
+      <HintPath>..\packages\Splat.1.6.2\lib\Xamarin.Mac10\Splat.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Squirrel, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\squirrel.windows.1.2.1\lib\Net45\Squirrel.dll</HintPath>
       <Private>True</Private>
     </Reference>
+-->
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -71,42 +90,34 @@
     <ProjectReference Include="..\OpenLiveWriter.Api\OpenLiveWriter.Api.csproj">
       <Name>OpenLiveWriter.Api</Name>
       <Project>{B6D10B42-F173-4086-BB81-96B724BA5594}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.ApplicationFramework\OpenLiveWriter.ApplicationFramework.csproj">
       <Name>OpenLiveWriter.ApplicationFramework</Name>
       <Project>{EEEE653A-90CE-44E2-B40E-22F747880CC0}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.BlogClient\OpenLiveWriter.BlogClient.csproj">
       <Name>OpenLiveWriter.BlogClient</Name>
       <Project>{FE2EA529-26E6-42C3-9F6A-E58966995FFE}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.BrowserControl\OpenLiveWriter.BrowserControl.csproj">
       <Name>OpenLiveWriter.BrowserControl</Name>
       <Project>{A5C213F6-F0C6-4FD6-B496-61FE434621A6}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Controls\OpenLiveWriter.Controls.csproj">
       <Name>OpenLiveWriter.Controls</Name>
       <Project>{D4A39612-3610-458F-83F8-5722D1F51063}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.CoreServices\OpenLiveWriter.CoreServices.csproj">
       <Name>OpenLiveWriter.CoreServices</Name>
       <Project>{9154B6B4-F2C3-4FB4-BE38-A26A6C9409EE}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Interop\OpenLiveWriter.Interop.csproj">
       <Name>OpenLiveWriter.Interop</Name>
       <Project>{0937EF37-EB01-48E2-885B-991044877712}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Localization\OpenLiveWriter.Localization.csproj">
       <Name>OpenLiveWriter.Localization</Name>
       <Project>{DF928A2F-38E3-4B1F-83CE-1FDFDE836D84}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +134,7 @@
     <EmbeddedResource Include="OpenLiveWriter.exe.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Compile Include="IMainPlatform.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- COPY MANIFEST TO TARGET DIRECTORY -->

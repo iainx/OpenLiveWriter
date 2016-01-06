@@ -32,7 +32,9 @@ namespace OpenLiveWriter
         [STAThread]
         public static void Main(string[] args)
         {
-            #if WINDOWS
+            IMainPlatform platform = PlatformHelper.GetPlatform<IMainPlatform> ();
+
+#if WINDOWS
             // WinLive 281407: Remove the current working directory from the dll search path
             // This prevents a rogue dll (wlidcli.dll) from being loaded while doing
             // something like opening a .wpost from a network location.
@@ -78,6 +80,7 @@ namespace OpenLiveWriter
 
             //initialize the default internet features for browser controls
             InitInternetFeatures();
+
 #if WINDOWS
             SingleInstanceApplicationManager.Run(
                 appId,
@@ -87,6 +90,8 @@ namespace OpenLiveWriter
 #else
             LaunchAction (args, true);
 #endif
+
+            platform.Run (LaunchAction, args);
         }
 
         /// <summary>

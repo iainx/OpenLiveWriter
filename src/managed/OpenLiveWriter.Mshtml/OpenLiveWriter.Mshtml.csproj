@@ -5,6 +5,23 @@
     <ProjectGuid>{906BA039-467B-41AE-B805-BA1B837AB763}</ProjectGuid>
     <AssemblyName>OpenLiveWriter.Mshtml</AssemblyName>
     <RootNamespace>OpenLiveWriter.Mshtml</RootNamespace>
+    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.Mshtml</IntermediateOutputPath>
+    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.Mshtml</IntermediateOutputPath>
+    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.Mshtml</IntermediateOutputPath>
+    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
+    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.Mshtml</IntermediateOutputPath>
+    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -15,17 +32,14 @@
     <ProjectReference Include="..\OpenLiveWriter.CoreServices\OpenLiveWriter.CoreServices.csproj">
       <Name>OpenLiveWriter.CoreServices</Name>
       <Project>{9154B6B4-F2C3-4FB4-BE38-A26A6C9409EE}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Interop.Mshtml\OpenLiveWriter.Interop.Mshtml.csproj">
       <Name>OpenLiveWriter.Interop.Mshtml</Name>
       <Project>{102B4586-3CDB-4DC2-A918-8377B6915BB4}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\OpenLiveWriter.Interop\OpenLiveWriter.Interop.csproj">
       <Name>OpenLiveWriter.Interop</Name>
       <Project>{0937EF37-EB01-48E2-885B-991044877712}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

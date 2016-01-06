@@ -6,6 +6,6 @@ all:
 	xbuild /nologo /tv:12.0 /p:TargetFrameworkVersion="v4.5" /p:Configuration=$(OLW_CONFIG) /p:NoWarn=0219,0414 /p:Configuration=DebugMac  $(SOLUTION_PATH)
 
 clean:
-	xbuild /nologo /tv:12.0 /target:Clean $(SOLUTION_PATH)
+	xbuild /nologo /tv:12.0 /p:Configuration=DebugMac /target:Clean $(SOLUTION_PATH)
 
 rebuild: clean all
