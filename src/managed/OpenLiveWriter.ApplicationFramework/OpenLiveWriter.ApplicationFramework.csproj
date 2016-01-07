@@ -5,23 +5,6 @@
     <AssemblyName>OpenLiveWriter.ApplicationFramework</AssemblyName>
     <RootNamespace>OpenLiveWriter.ApplicationFramework</RootNamespace>
     <ProjectGuid>{EEEE653A-90CE-44E2-B40E-22F747880CC0}</ProjectGuid>
-    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.ApplicationFramework</IntermediateOutputPath>
-    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.ApplicationFramework</IntermediateOutputPath>
-    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.ApplicationFramework</IntermediateOutputPath>
-    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.ApplicationFramework</IntermediateOutputPath>
-    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />

@@ -7,23 +7,6 @@
     <RootNamespace>OpenLiveWriter.PostEditor</RootNamespace>
     <ProjectGuid>{D6C9A393-E0B8-4548-B84B-F8B6FE2A5645}</ProjectGuid>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.PostEditor</IntermediateOutputPath>
-    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.PostEditor</IntermediateOutputPath>
-    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.PostEditor</IntermediateOutputPath>
-    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.PostEditor</IntermediateOutputPath>
-    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />

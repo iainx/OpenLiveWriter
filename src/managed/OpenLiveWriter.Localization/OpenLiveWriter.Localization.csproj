@@ -5,23 +5,6 @@
     <AssemblyName>OpenLiveWriter.Localization</AssemblyName>
     <RootNamespace>OpenLiveWriter.Localization</RootNamespace>
     <ProjectGuid>{DF928A2F-38E3-4B1F-83CE-1FDFDE836D84}</ProjectGuid>
-    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.Localization</IntermediateOutputPath>
-    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.Localization</IntermediateOutputPath>
-    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.Localization</IntermediateOutputPath>
-    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.Localization</IntermediateOutputPath>
-    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

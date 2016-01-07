@@ -6,23 +6,6 @@
     <RootNamespace>OpenLiveWriter.BlogClient</RootNamespace>
     <ProjectGuid>{B6D10B42-F173-4086-BB81-96B724BA5594}</ProjectGuid>
     <ProjectGuid>{FE2EA529-26E6-42C3-9F6A-E58966995FFE}</ProjectGuid>
-    <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.BlogClient</IntermediateOutputPath>
-    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.BlogClient</IntermediateOutputPath>
-    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.BlogClient</IntermediateOutputPath>
-    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.BlogClient</IntermediateOutputPath>
-    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

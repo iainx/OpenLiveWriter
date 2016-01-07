@@ -12,8 +12,10 @@ SYSTEM_ASSEMBLIES="/assembly:$MONO_DLL_PATH/System.dll /assembly:$MONO_DLL_PATH/
 
 OLW_ASSEMBLIES="/assembly:$OLW_DLL_PATH/OpenLiveWriter.Api.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.ApplicationFramework.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.BlogClient.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.BrowserControl.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.Controls.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.CoreServices.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.Extensibility.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.FileDestinations.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.HtmlEditor.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.HtmlParser.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.InternalWriterPlugin.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.Interop.Mshtml.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.Interop.SHDocVw.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.Interop.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.Localization.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.MacPlatform.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.Mshtml.dll /assembly:$OLW_DLL_PATH/OpenLiveWriter.PostEditor.dll"
 
+NATIVE_REFERENCES="/native-reference:$XM_LIB_PATH/libxammac.dylib"
+
 MMP_OPTIONS="/verbose /debug /output:$OLW_OBJ_PATH /name:olw /profile:Xamarin.Mac /arch:x86_64 /sgen /new-refcount /profiling /nolink --embed-mono=false"
 
 # Apparent bug in mmp means we need to change the name of the exe file
 cp $OLW_DLL_PATH/OpenLiveWriter.exe $OLW_DLL_PATH/olw.exe
-$XM_BIN_PATH/mmp $MMP_OPTIONS $SYSTEM_ASSEMBLIES $OLW_ASSEMBLIES $OLW_DLL_PATH/olw.exe /sdkroot /Applications/Xcode.app/Contents/Developer --cache $OLW_OBJ_PATH/mmp-cache
+$XM_BIN_PATH/mmp $MMP_OPTIONS $SYSTEM_ASSEMBLIES $OLW_ASSEMBLIES $NATIVE_REFENCES $OLW_DLL_PATH/olw.exe /sdkroot /Applications/Xcode.app/Contents/Developer --cache $OLW_OBJ_PATH/mmp-cache

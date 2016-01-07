@@ -7,22 +7,6 @@
     <ProjectGuid>{217B1333-654D-4901-807D-6E1A98FF3A4D}</ProjectGuid>
     <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Debug\OpenLiveWriter.FileDestinations</IntermediateOutputPath>
-    <OutputPath>..\bin\Debug\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\DebugMac\OpenLiveWriter.FileDestinations</IntermediateOutputPath>
-    <OutputPath>..\bin\DebugMac\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\Release\OpenLiveWriter.FileDestinations</IntermediateOutputPath>
-    <OutputPath>..\bin\Release\i386\Writer</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMac|AnyCPU' ">
-    <IntermediateOutputPath>..\obj\ReleaseMac\OpenLiveWriter.FileDestinations</IntermediateOutputPath>
-    <OutputPath>..\bin\ReleaseMac\i386\Writer</OutputPath>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
