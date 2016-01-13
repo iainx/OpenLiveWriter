@@ -201,3 +201,9 @@ FakesAssemblies/
 
 #Visual Studio specific files
 *.VC.opendb
+
+# OSX App packages
+*.app
+
+# That annoying OSX directory
+.DS_Store
