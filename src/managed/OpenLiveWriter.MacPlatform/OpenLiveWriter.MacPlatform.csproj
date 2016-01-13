@@ -31,6 +31,15 @@
   <ItemGroup>
     <None Include="Info.plist" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Icons.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Icons.xcassets\LaunchImages.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Icons.xcassets\Contents.json" />
+    <ImageAsset Include="Resources\Icons.xcassets\AppIcons.appiconset\Writer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="$(RepoRoot)\writer.build.targets" />
 </Project>
