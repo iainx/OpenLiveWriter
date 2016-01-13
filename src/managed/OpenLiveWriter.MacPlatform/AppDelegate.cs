@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Diagnostics;
 using OpenLiveWriter.CoreServices;
 
 using AppKit;
@@ -12,15 +12,11 @@ namespace OpenLiveWriter.MacPlatform
     {
         public SingleInstanceApplicationManager.LaunchAction LaunchAction { get; set; }
         public string [] Args { get; set; }
-        public AppDelegate ()
-        {
-            
-        }
-
+ 
         public override void DidFinishLaunching (Foundation.NSNotification notification)
         {
-            Console.WriteLine ("AppDelegate DidFinishLaunching");
-            //LaunchAction (Args, true);
+            Trace.WriteLine ("AppDelegate DidFinishLaunching");
+            LaunchAction (Args, true);
         }
     }
 }

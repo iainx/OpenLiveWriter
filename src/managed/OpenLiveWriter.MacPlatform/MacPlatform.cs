@@ -14,13 +14,11 @@ namespace OpenLiveWriter.MacPlatform
 
         public MacPlatform ()
         {
-            Console.WriteLine ("Mac Platform created");
-
+            Debug.WriteLine ("Mac Platform created");
             NSApplication.Init ();
 
             var app = NSApplication.SharedApplication;
 
-            Console.WriteLine ("Shared application {0} - {1}", app, NSApplication.SharedApplication);
             appDelegate = new AppDelegate ();
 
             NSApplication.SharedApplication.Delegate = appDelegate;
@@ -34,8 +32,6 @@ namespace OpenLiveWriter.MacPlatform
 
         public void Run (SingleInstanceApplicationManager.LaunchAction launchAction, string[] args)
         {
-            //pool.Dispose ();
-
             appDelegate.LaunchAction = launchAction;
             appDelegate.Args = args;
 

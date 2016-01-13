@@ -88,7 +88,7 @@ namespace OpenLiveWriter
                 args
                 );
 #else
-            LaunchAction (args, true);
+            //LaunchAction (args, true);
 #endif
 
             platform.Run (LaunchAction, args);
