@@ -30,5 +30,7 @@
 	<string>public.app-category.productivity</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.openlivewriter.OpenLiveWriter</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Icons.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>
