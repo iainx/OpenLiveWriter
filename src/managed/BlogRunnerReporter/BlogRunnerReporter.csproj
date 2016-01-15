@@ -11,7 +11,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" Condition=" '$(OS)' == 'Windows_NT' "/>
+    <Reference Include="System.Deployment" Condition=" '$(OS)' == 'Windows_NT' " />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
