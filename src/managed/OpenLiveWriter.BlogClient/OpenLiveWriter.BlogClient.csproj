@@ -10,6 +10,9 @@
     </NuGetPackageImportStamp>
     <AssemblyOriginatorKeyFile>..\..\..\key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.Apis, Version=1.9.2.27817, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.9.2\lib\net40\Google.Apis.dll</HintPath>
