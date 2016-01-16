@@ -212,7 +212,12 @@ namespace OpenLiveWriter.Controls
         /// <returns>The DialogResult.</returns>
         public static DialogResult Show(MessageId messageId, params object[] args)
         {
+#if WINDOWS
             return Show(messageId, Win32WindowImpl.ForegroundWin32Window, args);
+#else
+            Console.WriteLine (messageId.ToString ());
+            return DialogResult.Abort;
+#endif
         }
 
         /// <summary>
@@ -241,7 +246,12 @@ namespace OpenLiveWriter.Controls
         /// <returns>The DialogResult.</returns>
         public DialogResult Show(params object[] args)
         {
+#if WINDOWS
             return Show(Win32WindowImpl.ForegroundWin32Window, args);
+#else
+            //Console.WriteLine (args);
+            return DialogResult.Abort;
+#endif
         }
 
         /// <summary>
