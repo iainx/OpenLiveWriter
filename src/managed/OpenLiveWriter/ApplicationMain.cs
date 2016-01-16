@@ -170,7 +170,7 @@ namespace OpenLiveWriter
                         currentUICulture = CultureInfo.CurrentUICulture;
 
                         // show splash screen
-                        IDisposable splashScreen = null;
+                        FormSplashScreen splashScreen = null;
                         //	Show the splash screen.
 #if WINDOWS
                         SplashScreen splashScreenForm = new SplashScreen();
@@ -178,7 +178,9 @@ namespace OpenLiveWriter
                         splashScreenForm.Update();
                         splashScreen = new FormSplashScreen(splashScreenForm);
 #endif
-                        LaunchFirstInstance(splashScreen, args);
+                        splashScreen = new FormSplashScreen ();
+                        splashScreen.Show ();
+//                        LaunchFirstInstance(splashScreen, args);
                     }
                     finally
                     {

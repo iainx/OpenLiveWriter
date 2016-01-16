@@ -23,16 +23,25 @@
       <Project>{9154B6B4-F2C3-4FB4-BE38-A26A6C9409EE}</Project>
       <Name>OpenLiveWriter.CoreServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenLiveWriter.Localization\OpenLiveWriter.Localization.csproj">
+      <Project>{DF928A2F-38E3-4B1F-83CE-1FDFDE836D84}</Project>
+      <Name>OpenLiveWriter.Localization</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MacPlatform.cs" />
-    <Compile Include="AppDelegate.cs" />
+    <Compile Include="OpenLiveWriter\AppDelegate.cs" />
+    <Compile Include="OpenLiveWriter\MacPlatform.cs" />
+    <Compile Include="OpenLiveWriter.CoreServices\SplashScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="OpenLiveWriter.CoreServices\" />
+    <Folder Include="OpenLiveWriter\" />
+    <Folder Include="OpenLiveWriter.Controls\" />
+    <Folder Include="OpenLiveWriter.Controls\Wizard\" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Icons.xcassets\AppIcons.appiconset\Contents.json" />

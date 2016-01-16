@@ -13,6 +13,7 @@ using OpenLiveWriter.Localization.Bidi;
 
 namespace OpenLiveWriter.CoreServices
 {
+#if WINDOWS
     /// <summary>
     /// Summary description for SplashScreen.
     /// </summary>
@@ -234,20 +235,36 @@ namespace OpenLiveWriter.CoreServices
         }
         #endregion
     }
+#endif
+
+    public interface ISplashScreen
+    {
+        void Show ();
+        void Close ();
+    }
 
     /// <summary>
     /// Implementation of a splash screen connected to a form
     /// </summary>
     public class FormSplashScreen : IDisposable
     {
-        public FormSplashScreen(Form form)
+        public FormSplashScreen ()
         {
-            this.form = form;
+            splashScreen = PlatformHelper.GetPlatform<ISplashScreen> ();
+            if (splashScreen == null) {
+                // TODO: Something?
+            }
         }
+
+        public void Show ()
+        {
+            splashScreen.Show ();
+        }
+
 
         public Form Form
         {
-            get { return form; }
+            get { return null; }
         }
 
         /// <summary>
@@ -256,6 +273,8 @@ namespace OpenLiveWriter.CoreServices
         /// </summary>
         public void Dispose()
         {
+            splashScreen.Close ();
+            /*
             if (form != null)
             {
                 if (form.InvokeRequired)
@@ -275,11 +294,9 @@ namespace OpenLiveWriter.CoreServices
                     }
                 }
             }
+            */
         }
 
-        /// <summary>
-        /// Form instance
-        /// </summary>
-        private Form form;
+        private ISplashScreen splashScreen;
     }
 }
